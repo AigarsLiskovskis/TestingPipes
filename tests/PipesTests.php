@@ -101,7 +101,7 @@ class PipesTests extends TestCase
         $pipe->flowOrNot();
         $pipe->flowOrNot();
 
-        var_dump($pipe->getField());
+        //var_dump($pipe->getField());
 
         $this->assertSame(
             true,
