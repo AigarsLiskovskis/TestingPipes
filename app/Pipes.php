@@ -98,22 +98,7 @@ class Pipes
     }
 
 
-    public function win(): bool
-    {
-        for ($i = 0; $i < count($this->grid); $i++){
-            $this->flowOrNot();
-        }
-
-        foreach ($this->field as $line) {
-            if (!in_array(0, $line)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    public function flowOrNot():void
+    public function waterSupply():void
     {
         for ($i = 0; $i < count($this->grid); $i++) {
             for ($j = 0; $j < count($this->grid); $j++) {
@@ -132,6 +117,22 @@ class Pipes
             }
         };
     }
+
+
+    public function win(): bool
+    {
+        for ($i = 0; $i < count($this->grid); $i++){
+            $this->waterSupply();
+        }
+
+        foreach ($this->field as $line) {
+            if (!in_array(0, $line)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * @return array|int[][][]

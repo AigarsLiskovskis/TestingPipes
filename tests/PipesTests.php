@@ -81,32 +81,18 @@ class PipesTests extends TestCase
     }
 
 
-    public function testWin()
+    public function testIsWaterSupplied()
     {
         $pipe = new Pipes();
 
+        $pipe->waterSupply();
+        $pipe->waterSupply();
+        $pipe->waterSupply();
+        $pipe->waterSupply();
         $this->assertSame(
             true,
             $pipe->win()
         );
-    }
-
-
-    public function testIsWaterAround()
-    {
-        $pipe = new Pipes();
-
-        $pipe->flowOrNot();
-        $pipe->flowOrNot();
-        $pipe->flowOrNot();
-        $pipe->flowOrNot();
-
         //var_dump($pipe->getField());
-
-        $this->assertSame(
-            true,
-            $pipe->win()
-        );
     }
-
 }
